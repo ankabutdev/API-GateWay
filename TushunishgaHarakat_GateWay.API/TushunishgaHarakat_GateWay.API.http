@@ -1,0 +1,6 @@
+@TushunishgaHarakat_GateWay.API_HostAddress = http://localhost:5147
+
+GET {{TushunishgaHarakat_GateWay.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
