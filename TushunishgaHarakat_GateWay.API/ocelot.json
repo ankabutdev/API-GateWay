@@ -1,0 +1,33 @@
+{
+  "Routes": [
+    {
+      // Employee.API 7136
+      "DownstreamPathTemplate": "/api/employees",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7136
+        }
+      ],
+      "UpstreamPathTemplate": "/employees",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      // Product.API 7214
+      "DownstreamPathTemplate": "/api/products",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7214
+        }
+      ],
+      "UpstreamPathTemplate": "/products",
+      "UpstreamHttpMethod": [ "GET" ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:5000"
+  }
+}

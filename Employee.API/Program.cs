@@ -1,6 +1,3 @@
-using Microsoft.Extensions.Configuration;
-using StackExchange.Redis;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
