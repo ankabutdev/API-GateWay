@@ -45,7 +45,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 7214
+          "Port": 7215
         }
       ],
       "UpstreamPathTemplate": "/students/{id}",

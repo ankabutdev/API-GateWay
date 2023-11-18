@@ -5,7 +5,7 @@ using User.API.Models;
 
 namespace User.API.Controllers;
 
-[Route("api/students")]
+[Route("api/students/")]
 [ApiController]
 public class StudentsController : ControllerBase
 {
@@ -34,7 +34,7 @@ public class StudentsController : ControllerBase
             Password = userDto.Password
         };
 
-        _dbContext.Students.Add(userModel);
+        await _dbContext.Students.AddAsync(userModel);
         await _dbContext.SaveChangesAsync();
 
         return Ok(userModel);
@@ -43,7 +43,7 @@ public class StudentsController : ControllerBase
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdateAsync(int id, StudentDto userDto)
     {
-        var userModel = await _dbContext.Students.FindAsync(id);
+        var userModel = await _dbContext.Students.FirstOrDefaultAsync(x => x.Id == id);
 
         if (userModel == null)
         {
@@ -65,7 +65,7 @@ public class StudentsController : ControllerBase
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteAsync(int id)
     {
-        var user = await _dbContext.Students.FindAsync(id);
+        var user = await _dbContext.Students.FirstOrDefaultAsync(x => x.Id == id);
 
         if (user == null)
         {
@@ -80,7 +80,7 @@ public class StudentsController : ControllerBase
     [HttpGet("{id}")]
     public async Task<IActionResult> GetUserById(int id)
     {
-        var user = await _dbContext.Students.FindAsync(id);
+        var user = await _dbContext.Students.FirstOrDefaultAsync(x => x.Id == id);
 
         if (user == null)
         {
