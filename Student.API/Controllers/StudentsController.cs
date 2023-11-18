@@ -40,7 +40,7 @@ public class StudentsController : ControllerBase
         return Ok(userModel);
     }
 
-    [HttpPut]
+    [HttpPut("{id}")]
     public async Task<IActionResult> UpdateAsync(int id, StudentDto userDto)
     {
         var userModel = await _dbContext.Students.FindAsync(id);

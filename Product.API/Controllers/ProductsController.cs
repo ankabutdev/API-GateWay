@@ -5,7 +5,7 @@ using User.API.Models;
 
 namespace User.API.Controllers;
 
-[Route("api/products")]
+[Route("api/products/")]
 [ApiController]
 public class ProductsController : ControllerBase
 {
