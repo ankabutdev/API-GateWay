@@ -9,7 +9,7 @@ used databases ->
 Memory Cache was also used -> 
     Redis (Cloud AWS)
 
-Qo'llanilgan Servicelar ->  
+Used Services (API) ->  
     User.API -> Postgresql
     Employee.API -> Redis (Cloud AWS)
     Student.API -> SqlServer
