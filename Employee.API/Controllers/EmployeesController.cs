@@ -31,8 +31,8 @@ public class EmployeesController : ControllerBase
 
         var cacheOptions = new DistributedCacheEntryOptions
         {
-            AbsoluteExpirationRelativeToNow = TimeSpan.FromSeconds(30),
-            //SlidingExpiration = TimeSpan.FromSeconds(30)
+            AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(1),
+            SlidingExpiration = TimeSpan.FromSeconds(20)
         };
 
         await _cache.SetStringAsync("AllEmployees", JsonConvert.SerializeObject(employeesFromDb), cacheOptions);
